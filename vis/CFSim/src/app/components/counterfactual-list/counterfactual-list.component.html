@@ -1,0 +1,69 @@
+<div class="component-wrapper">
+
+    <div class="header-wrapper">
+        <div class="header-container">
+            <h1>Counterfactual Suggestions</h1>
+        </div>
+    </div>
+
+    <div class="body-wrapper">
+        
+        <!-- <div *ngIf='this.counterfactuallist.length !== 0; else emtpy_container' class="scrollable-container"> -->
+        <div class="list-wrapper" *ngIf='this.counterfactuallist.length !== 0; else emtpy_container'>
+            
+            <div class="list-container">
+                <div class="scrollable-container">
+
+                    <mat-accordion>
+
+                        <mat-expansion-panel *ngFor='let cfinstance of this.counterfactualListController?.visibleCounterfactualList' hideToggle>
+                        
+                            <mat-expansion-panel-header collapsedHeight='120px' expandedHeight='140px'>
+                                <mat-panel-title>
+                                    <div class="counterfactual-instance-container">
+                                        <app-counterfactual-instance 
+                                            [counterfactualinstance]='cfinstance'>
+                                        </app-counterfactual-instance>
+                                    </div>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                        
+                            <div class="counterfactual-details-container">
+                                <app-counterfactual-details 
+                                    [cffeatureinstances]='cfinstance.get_changing_features()'
+                                    [featureHistograms]='this.counterfactualsState.get_features_histograms( cfinstance.get_changing_features_names() )'>
+                                </app-counterfactual-details>
+                            </div>
+
+                        </mat-expansion-panel>
+                    </mat-accordion>
+
+                </div>
+            </div>
+
+            <div class="paginator-container">
+
+                <mat-paginator 
+                    (page)='this.counterfactualListController?.change_page($event)'
+                    [length]="this.counterfactualListController?.counterfactualList?.length"
+                    [pageSize]='this.counterfactualListController?.pageSize'>
+                </mat-paginator>            
+
+            </div>
+
+
+
+        </div>
+
+        <ng-template #emtpy_container>
+            <div class='message-container'>
+                <h2>No counterfactual found...</h2>
+            </div>
+        </ng-template>
+
+
+    </div>
+
+    
+
+</div>

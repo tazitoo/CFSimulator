@@ -1,0 +1,57 @@
+
+<div class="dialog-wrapper">
+
+    <div class="dialog-header-container">
+        <h2>Select the dataset</h2>
+    </div>
+
+        <div class="dialog-body-container">
+
+            <div class="dialog-body-component-wrapper">
+
+                <div class="selector-container">
+                    <div class="dataset-selector-container">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Dataset</mat-label>
+                            <mat-select #featureselector (selectionChange)='this.dataLoaderDialogController?.load_dataset($event)'>
+                                <mat-option *ngFor="let dataset of this.dataLoaderDialogController?.availableDatasets" [value]="dataset">
+                                    {{ dataset }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+
+                <div class="dialog-body-component-container">
+
+                    <div class="subcomponent-container">
+                        <div class='data-table-container'>
+                            <app-dataset-overview (onrowclicked)='this.dataLoaderDialogController?.on_row_selected($event)'></app-dataset-overview>
+                        </div>
+                    </div>
+
+                    <mat-divider vertical='true'></mat-divider>
+
+                    <div class="subcomponent-container">
+                        <div class='filters-list-container'>
+                            <app-filter-manager 
+                                #filtermanagerref
+                                (onfilterupdated)='this.dataLoaderDialogController?.on_filters_update($event.filters)'
+                                [availablefeatures]='this.dataState.loadedDataset.features'>
+                            </app-filter-manager>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        
+
+        <div class="dialog-footer-container">
+            <button mat-stroked-button (click)='this.dialogRef.close()'>Cancel</button>
+        </div>
+        
+
+</div>
+

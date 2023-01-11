@@ -1,0 +1,19 @@
+@media (min-width: 2000px) and (max-width: 3000px){
+
+    .toolbar-container {
+        flex: 1;
+    }
+
+    .current-view-container {
+        flex: 20;
+    }
+
+    .sidebar-wrapper{
+        flex: 1;
+    }
+
+    .main-section-wrapper{
+        flex: 3;
+    }
+
+}

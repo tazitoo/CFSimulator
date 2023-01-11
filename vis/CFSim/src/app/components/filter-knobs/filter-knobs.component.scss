@@ -1,0 +1,37 @@
+@import 'src/global_styles/color_themes.scss';
+@import 'src/global_styles/global_styles.scss';
+@import 'src/global_styles/general_component_template.scss';
+
+.filter-wrapper{
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.filter-header{
+
+    display: flex;
+    flex: 1;
+
+    align-items: center;
+
+    padding: 0px 10px 0px 10px;
+}
+
+.filter-body{
+
+    display: flex;
+    justify-content: center;
+    flex: 2; 
+}
+
+.slider-container{
+
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}

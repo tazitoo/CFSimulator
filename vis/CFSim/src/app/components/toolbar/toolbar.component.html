@@ -1,0 +1,13 @@
+<div class="toolbar-container">
+    <mat-toolbar>
+
+        <button mat-icon-button [matMenuTriggerFor]='loadDataMenu'>
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <mat-menu #loadDataMenu='matMenu'>
+            <button mat-menu-item (click)='this.toolbarController?.open_dialog("data-loader-dialog")'>Load Data</button>
+        </mat-menu>
+
+    </mat-toolbar>
+</div>

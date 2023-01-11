@@ -1,0 +1,54 @@
+<div class="component-wrapper">
+
+    <div class="header-wrapper">
+        <div class="header-container">
+            <h1>Dataset</h1>
+        </div>
+    </div>
+
+
+    <div class="body-wrapper">
+
+        <div class="table-wrapper">
+
+            <div class="table-container">
+
+                <div class="scrollable-container">
+
+                    <table mat-table [dataSource]='this.dataState.loadedDataset.rows' matSort (matSortChange)="sort_overview_table($event)" class="mat-elevation-z0">
+                  
+                        <ng-container *ngFor='let feature of this.dataState.loadedDataset.features' [matColumnDef]=feature>
+                          <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>{{ feature }}</b> </th>
+                          <td mat-cell *matCellDef="let element"> {{ element[feature] }} </td>
+                        </ng-container>
+                      
+                        <tr mat-header-row *matHeaderRowDef='this.dataState.loadedDataset.features; sticky: true' ></tr>
+                        <tr mat-row (click)='this.onrowclicked.emit({"queryinstance": row})' [ngClass]='{ "positive-row":  row.proba > 0.5 }' *matRowDef="let row; let i = index; columns: this.dataState.loadedDataset.features;"></tr>
+        
+                    </table>
+    
+                </div>
+
+            </div>
+
+            <div class="legend-container">
+
+                <div class="label-container">
+                    <div class="label-icon" style="background-color: #9B9B9B;"></div>
+                    <h2>Positive</h2>
+                </div>
+
+                <div class="label-container">
+                    <div class="label-icon"></div>
+                    <h2>Negative</h2>
+                </div>
+
+            </div>
+
+        </div>
+
+          
+    </div>
+
+
+</div>

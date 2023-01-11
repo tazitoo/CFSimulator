@@ -1,0 +1,40 @@
+<div class="component-wrapper">
+
+    <div class="header-wrapper">
+        <div class="header-container">
+            <h1>Constraints</h1>
+        </div>
+    </div>
+
+    <div class="flex-body-wrapper">
+
+        <div class="action-list-wrapper">
+            
+            <div class="action-list-container">
+                <div class="scrollable-container">
+                    <app-action-instance 
+                        *ngFor='let action of this.actionsState.created_actions; let i = index'
+                        (ondeleteclicked)='this.ondeleteclicked.emit( {action: $event.action, index: i} )'
+                        [actioninstance]='action'
+                        [histdata]='this.dataState.loadedDataset.get_feature_histogram(action.featureName)'>
+                    </app-action-instance>
+                </div>
+            </div>
+
+            <div class="action-buttons-container">
+
+                <button 
+                    [disabled]='!this.datasetLoaded'
+                    mat-fab color="primary"
+                    (click)='this.dialogManager.open_dialog("action-builder-dialog")'>
+                    <mat-icon>add</mat-icon>
+                </button>
+
+            </div>
+
+        </div>
+
+        
+    </div>
+
+</div>

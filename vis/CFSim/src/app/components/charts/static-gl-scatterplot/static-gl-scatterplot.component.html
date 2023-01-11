@@ -1,0 +1,26 @@
+<div class="component-wrapper">
+    <div class="chart-wrapper">
+
+
+        <div class="chart-header">
+            <div class="icon-list">
+                <div class="icon-container">
+                    <button (click)='this.staticGLScatterplotController?.set_brush_mode()' mat-icon-button color="primary">
+                        <mat-icon [ngStyle]='{ "color": (this.staticGLScatterplotController!.brushActive) ? "black" : "#9B9B9B" }'>tab_unselected</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <div class="chart-container" #chartcontainerref></div>
+
+        <mat-divider></mat-divider>
+
+        <div class="chart-footer" #chartlegendcontainerref>
+            
+        </div>
+
+    </div>
+</div>

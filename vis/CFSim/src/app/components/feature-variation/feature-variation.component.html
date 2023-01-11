@@ -1,0 +1,22 @@
+<div class="component-wrapper">
+
+    <div class="header-wrapper">
+        <div class="header-container">
+            <h1>Feature Variation</h1>
+        </div>
+    </div>
+
+    <div class="body-wrapper">
+
+        <div class="chart-list-wrapper">
+            <div class="chart-container">
+                <app-static-barplot [data]='this.featureVariationController!.positiveFeatureVariation'></app-static-barplot>
+            </div>
+            <div class="chart-container">
+                <app-static-barplot [data]='this.featureVariationController!.negativeFeatureVariation'></app-static-barplot>
+            </div>
+        </div>
+
+    </div>
+
+</div>

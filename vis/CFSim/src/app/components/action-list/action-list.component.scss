@@ -1,0 +1,46 @@
+@import 'src/global_styles/general_component_template.scss';
+@import 'src/global_styles/global_styles.scss';
+
+.action-list-wrapper{
+
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.action-list-container{
+
+    width: 100%;
+    height: calc(100% - 100px);
+    position: relative;
+
+}
+
+.scrollable-container{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+
+}
+
+.action-buttons-container{
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    width: 100%;
+    height: 100px;
+
+}
+
+button {
+
+    margin: 0 10px 0 10px;
+
+}
+

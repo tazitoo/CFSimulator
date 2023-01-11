@@ -1,0 +1,27 @@
+<div class="component-wrapper">
+
+    <div class="header-wrapper">
+        <div class="header-container">
+            <h1>Filters</h1>
+        </div>
+    </div>
+
+    <div class="body-wrapper">
+
+        <div class="filter-wrapper">
+        
+            <div class="filter-header">
+                <h2>Sparsity</h2>
+            </div>
+
+            <div class="filter-body">
+                <div class="slider-container">
+                    <mat-slider min='1' max='10' step='1' thumbLabel (change)='this.filterschanged.emit({sparsity: $event.value})'></mat-slider>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

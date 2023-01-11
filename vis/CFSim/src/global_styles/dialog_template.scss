@@ -1,0 +1,72 @@
+
+// color variables
+$dialog-header-title: #595959;
+$button-text-color: #595959;
+
+
+.dialog-wrapper{
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.dialog-header-container{
+
+
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+
+
+}
+
+.dialog-body-container{
+
+    display: flex;
+    flex: 1;
+
+}
+
+.dialog-footer-container{
+
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+}
+
+h1, h2 {
+
+    color: $dialog-header-title;
+}
+
+button {
+
+    height: 50px;
+    width: 100px;
+
+    margin: 0 5px 0 5px;
+    color: $button-text-color;
+}
+
+.mat-form-field{
+
+    width: 100%;
+    height: 100%;
+
+}
+
+form {
+
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}

@@ -1,0 +1,12 @@
+<div class="component-wrapper">
+    <div class="chart-wrapper">
+        <div *ngIf='this.displacement' class="displacement-direction-container">
+            <img *ngIf='this.displacement[1] > this.displacement[0]; else downwardimg'  src="../../../../assets/icons/right.png">
+            <ng-template #downwardimg><img src="../../../../assets/icons/left.png"></ng-template>
+        </div>
+        <div class="chart-container" #chartcontainerref></div>
+        <div class="chart-header-container">
+            <p><b>{{ this.title }}</b><p>
+        </div> 
+    </div>
+</div>

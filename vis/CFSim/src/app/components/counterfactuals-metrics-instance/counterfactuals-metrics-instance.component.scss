@@ -1,0 +1,85 @@
+@import 'src/global_styles/global_styles.scss';
+
+:host{
+
+    width: 100%;
+    height: 100%;
+
+}
+
+
+.component-wrapper{
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card-container{
+
+
+    width: 98%;
+    height: 100%;
+
+    display: flex;
+
+}
+
+.mat-card{
+
+    display: flex;
+    flex: 1;
+    
+}
+
+.card-content{
+
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+}
+
+.card-header-container{
+
+    width: 100%;
+    height: 20%;
+
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.card-body-container{
+
+    width: 100%;
+    height: 80%;
+
+    display: flex;
+    
+}
+
+.body-component-container{  
+
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    margin: 5px 0px 5px 0px;
+
+}
+
+.body-subcomponent-container{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    flex: 1;
+    flex-direction: row;
+
+}

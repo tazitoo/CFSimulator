@@ -1,0 +1,74 @@
+<div class="main-wrapper">
+
+    <div class="toolbar-container">
+        <app-toolbar></app-toolbar>
+    </div>
+    
+    <div class="current-view-container">
+        
+        <div class="left-sidebar-wrapper sidebar-wrapper">
+
+            <div class='explanation-overview-wrapper'>
+                <app-explanation-overview 
+                    [filteredcounterfactuals]='this.counterfactualsState.filteredCounterfactuals'
+                    [counterfactuals]='this.counterfactualsState.loadedCounterfactuals'
+                    (onpointsselected)='this.mainViewController?.counterfactual_points_selected($event)'>
+                </app-explanation-overview>
+            </div>
+
+            <div class='feature-variation-wrapper'>
+                <app-feature-variation [filteredcounterfactuals]='this.counterfactualsState.filteredCounterfactuals'></app-feature-variation>
+            </div>
+
+            <!-- <div class='filter-knobs-wrapper'>
+                <app-filter-knobs (filterschanged)="this.mainViewController?.filters_changed($event)"></app-filter-knobs>
+            </div> -->
+
+            <div class='explanation-metric-wrapper'>
+                <app-explanation-metrics-list [filteredcounterfactuals]='this.counterfactualsState.filteredCounterfactuals'></app-explanation-metrics-list>
+            </div>
+
+            <!-- <div class="dataset-overview-wrapper">
+                <app-dataset-overview 
+                    (onrowclicked)='this.mainViewController?.dataset_row_clicked($event)'>
+                </app-dataset-overview>
+            </div> -->
+
+            <mat-divider></mat-divider>
+
+            <!-- <div class="parameter-selector-wrapper">
+                <app-parameter-selector></app-parameter-selector>
+            </div> -->
+            
+        </div>
+
+        <mat-divider vertical></mat-divider>
+
+        <div class="main-section-wrapper">
+            <app-counterfactual-list [counterfactuallist]='this.counterfactualsState.filteredCounterfactuals'></app-counterfactual-list>
+        </div>
+
+        <mat-divider vertical></mat-divider>
+
+        <div class="right-sidebar-wrapper sidebar-wrapper">
+
+            <div class="action-guide-wrapper">
+                <app-action-list
+                    (ondeleteclicked)='this.mainViewController?.action_deleted($event)' 
+                    [datasetloaded]='this.dataState.loadedDataset.is_loaded()'>
+                </app-action-list>
+            </div>
+
+            <div class="suggestions-overview-wrapper">
+                <app-suggestion-list></app-suggestion-list>
+            </div>
+            
+            <!--<div class="classification-overview-wrapper">
+                <app-classification-overview></app-classification-overview>
+            </div> -->
+
+        </div>
+
+    </div>
+
+</div>

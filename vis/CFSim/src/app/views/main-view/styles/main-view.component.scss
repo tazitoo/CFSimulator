@@ -1,0 +1,79 @@
+.main-wrapper{
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+// HIGH-LEVEL COMPONENTS
+.current-view-container {
+
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+// MID-LEVEL COMPONENTS
+.sidebar-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.main-section-wrapper{
+    display: flex;
+}
+
+.toolbar-container {
+    display: flex;
+}
+
+
+
+// LOW-LEVEL COMPONENTS
+.feature-variation-wrapper{
+
+    display: flex;
+    flex: 4;
+
+}
+
+.explanation-overview-wrapper{
+
+    display: flex;
+    flex: 3;
+
+}
+
+.filter-knobs-wrapper{
+
+    display: flex;
+    flex: 1;
+
+}
+
+.explanation-metric-wrapper{
+
+    display: flex;
+    flex: 3;
+
+}
+
+.action-guide-wrapper{
+
+    display: flex;
+    flex: 1;
+
+}
+
+.suggestions-overview-wrapper{
+
+    display: flex;
+    flex: 1;
+    
+}
+
+

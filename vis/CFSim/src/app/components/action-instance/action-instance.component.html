@@ -1,0 +1,36 @@
+<div class="component-wrapper">
+
+    <div class="card-container">
+
+        <mat-card>
+            <div class="card-content">
+
+                <div class="card-header-container">
+
+                    <div class='header-component'>
+                        <h3>{{ this.actionInstance.featureName }}</h3>
+                    </div>
+                    <div class='header-component trash-icon-container'>
+                        <button mat-icon-button (click)='this.ondeleteclicked.emit({"action": this.actionInstance})'>
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </div>
+                    
+                    
+                </div>
+
+                <div class="card-body-container">
+                    <app-static-histogram 
+                        [histdata]='this.histData'
+                        [rangeselection]='[this.actionInstance.featureFloor, this.actionInstance.featureCeil]'>
+                    </app-static-histogram>
+                </div>
+                
+            </div>
+        </mat-card>
+
+    </div>
+
+    
+
+</div>

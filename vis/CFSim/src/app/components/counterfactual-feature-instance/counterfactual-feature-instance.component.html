@@ -1,0 +1,13 @@
+<div class="component-wrapper">
+
+    <div class="perturbation-header">
+        <p><b>{{ this.featureInstance.featureName }}</b></p>
+    </div>
+
+    <div class="perturbation-body">
+        <img *ngIf='this.featureInstance.variation > 0' src='../../../assets/icons/up.png'>
+        <img *ngIf='this.featureInstance.variation < 0' src='../../../assets/icons/down.png'>
+        <img *ngIf='this.featureInstance.variation == 0' src='../../../assets/icons/dot.png'>
+    </div>
+
+</div>

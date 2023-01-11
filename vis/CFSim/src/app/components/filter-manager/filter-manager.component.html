@@ -1,0 +1,56 @@
+<div class="component-wrapper">
+
+    <div class="header-wrapper">
+        <div class="header-container">
+            <h1>Filters</h1>
+        </div>
+    </div>
+
+
+    <div class="body-wrapper">
+
+        <div class="body-container">
+
+            <div class="filters-list-container">
+
+                <div class='filter-container' *ngFor='let filter of this.filterManagerController?.appliedFilters'>
+                    <app-selector-histogram
+                        (onbrushend)='this.filterManagerController?.update_filter(filter, $event.selection)'
+                        [title]='filter.featureName' 
+                        [histdata]='this.dataState.loadedDataset.get_feature_histogram(filter.featureName)'
+                        [updatable]='false'>
+                    </app-selector-histogram>
+                </div>
+            
+            </div>
+            
+            <div class="filter-manager-actions-container">
+
+                <form [formGroup]='this.filterCreationForm' (ngSubmit)='this.filterManagerController?.add_filter();'>
+
+                    <div class='add-icon-container'>
+                        <button mat-fab color="primary" type='submit'>
+                            <mat-icon>add</mat-icon>
+                        </button>
+                    </div>
+        
+                    <div class='feature-selector-container'>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Dataset</mat-label>
+                            <mat-select formControlName='featurename'>
+                                <mat-option *ngFor='let feature of this.availablefeatures' [value]='feature'>
+                                    {{ feature }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+
+                </form>
+
+            </div>
+        </div>       
+    </div>
+
+
+</div>

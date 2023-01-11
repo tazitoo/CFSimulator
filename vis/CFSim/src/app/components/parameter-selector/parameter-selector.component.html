@@ -1,0 +1,60 @@
+<div class="component-wrapper">
+
+    <div class="header-wrapper">
+        <div class="header-container">
+            <h1>Parameters</h1>
+        </div>
+    </div>
+
+    <div class="body-wrapper">
+
+
+    <form [formGroup]='this.parametersForm' (ngSubmit)='this.parameterSelectorController?.set_current_parameters();'>
+        
+        <div class="parameters-wrapper">
+
+            <div class="parameters-container">
+
+                <div class="parameter-row">
+                    <div class="parameter-row-header">
+                        <h2>Model</h2>
+                    </div>
+                    <div class="parameter-row-body">
+                        <div class="parameter-selector-container">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Model</mat-label>
+                                <mat-select formControlName='modelname'>
+                                    <mat-option *ngFor="let model of this.parameterState.get_available_parameter_values()['models']" [value]="model">
+                                        {{model}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="parameter-row">
+                    <div class="parameter-row-header">
+                        <h2>Sample Size</h2>
+                    </div>
+                    <div class="parameter-row-body">
+                        <mat-slider
+                            (change)='this.parameterSelectorController?.set_current_parameters()'
+                            formControlName='samplesize' 
+                            min='1' 
+                            max='50' 
+                            step='1' 
+                            thumbLabel>
+                        </mat-slider>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        
+    </form>
+
+    </div>
+
+</div>

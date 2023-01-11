@@ -1,0 +1,55 @@
+
+<div class="dialog-wrapper">
+
+    <div class="dialog-header-container">
+        <h2>Create Constraint</h2>
+    </div>
+
+    <form [formGroup]='this.actionBuilderForm' (ngSubmit)='this.actionBuilderDialogController?.add_action();'> 
+
+        <div class="dialog-body-container">
+            <div class="parameters-selector-list-container">
+
+                <div class="parameter-selector-container small-container">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Feature</mat-label>
+                        <mat-select formControlName='featurename' (selectionChange)='this.actionBuilderDialogController?.update_histogram_data($event)'>
+                            <mat-option *ngFor="let feature of this.dataState.loadedDataset.features" [value]="feature">
+                                {{ feature }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="parameter-selector-container large-container">
+                    <app-selector-histogram
+                        (onbrushend)='this.actionBuilderDialogController?.update_histogram_selection($event.selection);'
+                        [title]='this.actionBuilderDialogController?.histTitle'
+                        [histdata]='this.actionBuilderDialogController?.histData'>
+                    </app-selector-histogram>
+                </div>
+
+                <div class="parameter-selector-container small-container">
+                   <div *ngIf='this.actionBuilderDialogController!.histCurrentSelection!.length > 0' class="info-container">
+                        <p>All counterfactuals will maintain this atttibute bettween </p>
+                        <p><b>{{ this.actionBuilderDialogController!.histCurrentSelection[0] }} </b></p>
+                        <p> and </p>
+                        <p><b>{{ this.actionBuilderDialogController!.histCurrentSelection[1] }} </b></p>
+                        
+                   </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="dialog-footer-container">
+            <button mat-stroked-button type='submit' (click)='this.dialogRef.close()'>Apply</button>
+            <button mat-stroked-button type='button' (click)='this.dialogRef.close()'>Cancel</button>
+        </div>
+    
+    </form>
+
+
+
+
+</div>

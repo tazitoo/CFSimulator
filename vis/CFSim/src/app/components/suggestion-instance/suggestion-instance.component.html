@@ -1,0 +1,49 @@
+<div class="component-wrapper">
+
+    <div class="card-container">
+
+            <div class="card-content">
+
+                <div class="card-header-container">
+
+                    <div class="header-component">
+                        
+                        <div class="header-subcomponent feature-name-container">
+                            <h3>{{ this.featureSuggestion.featureName }}</h3>
+                        </div>
+
+                        <div class="header-subcomponent score-value-container">
+                            <h2><b>Score: </b> {{  this.featureSuggestion.score | number:'1.2-2'  }}</h2>
+                        </div>
+                        <!-- 
+                         -->
+                    </div>
+                    
+                </div>
+
+                <div class="card-body-container">
+
+                    <app-static-line></app-static-line>
+                    <!-- <h2><b>Score: </b> {{ this.featureSuggestion.score }}</h2> -->
+                   
+                </div>
+
+                <div class="card-footer-container">
+
+
+                    <div class="icon-container">
+                        <mat-icon>close</mat-icon>
+                    </div>
+                    <div class="icon-container">
+                        <mat-icon>done</mat-icon>
+                    </div>
+                    
+                </div>
+                
+            </div>
+
+    </div>
+
+    
+
+</div>

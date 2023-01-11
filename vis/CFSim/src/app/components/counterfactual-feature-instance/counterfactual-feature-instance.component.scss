@@ -1,0 +1,41 @@
+@import 'src/global_styles/color_themes.scss';
+
+:host{
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+}
+
+.component-wrapper{
+
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+}
+
+.perturbation-header{
+
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+
+    color: $paragraphcolor;
+}
+
+.perturbation-body{
+
+    display: flex;
+    flex: 2;
+    justify-content: center;
+    align-items: center;
+
+    img{
+        // max-height: 50%;
+        max-width: 30px;
+    }
+}

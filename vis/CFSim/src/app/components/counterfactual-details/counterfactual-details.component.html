@@ -1,0 +1,13 @@
+<div class='component-wrapper'>
+    <div class='chart-list-wrapper'>
+        <div class="chart-list-container">
+            <div *ngFor='let cfFeatureInstance of this.cffeatureinstances' class="chart-container">
+                <app-static-histogram 
+                    [title]='this.cfFeatureInstance.featureName'
+                    [histdata]='this.featureHistograms[cfFeatureInstance.featureName]'
+                    [displacement]='[this.cfFeatureInstance.oldValue, this.cfFeatureInstance.newValue]'>
+                </app-static-histogram>
+            </div>
+        </div>
+    </div>
+</div>
